@@ -38,8 +38,7 @@ public class StartScreenController : MonoBehaviour {
     }
 
 
-    public void drumHit(KeyCode key, int id) {
-        drumSticks[id].triggerVibration();
+    public void drumHit(KeyCode key) {
         ExecuteKey(key);
         StartCoroutine(resetDrum(0.2f));
     }
@@ -75,5 +74,13 @@ public class StartScreenController : MonoBehaviour {
         if (key == KeyCode.S) {
             sceneChanger.fadeToScene("SampleScene");
         }
+    }
+
+    public void StartTutorial() {
+        ExecuteKey(KeyCode.W);
+    }
+
+    public void StartGame() {
+        ExecuteKey(KeyCode.S);
     }
 }

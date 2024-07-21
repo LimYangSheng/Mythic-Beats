@@ -34,8 +34,7 @@ public class PlayerControlController : MonoBehaviour {
 		
 	}
 
-    public void drumHit(KeyCode key, int id) {
-        drumSticks[id].triggerVibration();
+    public void drumHit(KeyCode key) {
         playerRef.ExecuteKey(key, isAttackMode);
     }
 

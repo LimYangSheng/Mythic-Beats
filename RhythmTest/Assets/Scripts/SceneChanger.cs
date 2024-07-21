@@ -6,6 +6,7 @@ public class SceneChanger : MonoBehaviour {
 
     public Animator animator;
     private string sceneToLoad;
+    private bool isTransitingScene = false;
 
     // Update is called once per frame
     void Update()
@@ -24,12 +25,18 @@ public class SceneChanger : MonoBehaviour {
     }
 
     public void fadeToScene (string sceneName) {
+        if (isTransitingScene) {
+            // do not transit again if it is already in the middle of transition
+            return;
+        }
         sceneToLoad = sceneName;
         animator.SetTrigger("FadeOut");
+        isTransitingScene = true;
     }
 
     public void onFadeComplete() {
         SceneManager.LoadScene(sceneToLoad);
+        isTransitingScene = false;
     }
 
     public void waitAndFadeToScene(string sceneName, float duration) {

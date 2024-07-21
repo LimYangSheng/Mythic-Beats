@@ -14,23 +14,23 @@ public class ControllerStick : MonoBehaviour
     private bool upPressed = false;
 
     
-    private SteamVR_TrackedObject trackedObj;
+    //private SteamVR_TrackedObject trackedObj;
 
 
-    private SteamVR_Controller.Device Controller
+    /*private SteamVR_Controller.Device Controller
     {
         get { return SteamVR_Controller.Input((int)trackedObj.index); }
-    }
+    }*/
 
     private void Start() {
     }
 
-    void Awake() {
+    /*void Awake() {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-    }
+    }*/
 
     void Update() {
-        if (Controller.GetHairTriggerDown()) {
+        if (Input.GetMouseButton(0)) {
             if (downPressed)
                 return;
 
@@ -40,7 +40,7 @@ public class ControllerStick : MonoBehaviour
             if ((playerControl != null && !playerControl.isAttackMode) || (playerControlTutorial != null && !playerControlTutorial.isAttackMode))
                 EventManager.TriggerEvent("ToggleDrumToAttack");
         }
-        else if (Controller.GetHairTriggerUp()) {
+        else {
             if (upPressed)
                 return;
 
@@ -51,9 +51,4 @@ public class ControllerStick : MonoBehaviour
                 EventManager.TriggerEvent("ToggleDrumToMovement");
         }
     }
-
-    public void triggerVibration() {
-        Controller.TriggerHapticPulse(2000);
-    }
-
 }

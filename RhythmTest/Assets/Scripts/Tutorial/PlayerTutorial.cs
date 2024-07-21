@@ -47,31 +47,22 @@ public class PlayerTutorial : MonoBehaviour {
 
 
         if (mainCamera) {
-            if (tutorialController.isAttackTogglingEnabled) {
-                if (Input.GetKey(KeyCode.Q)) {
-                    EventManager.TriggerEvent("ToggleDrumToAttack");
-                }
-
-                if (Input.GetKey(KeyCode.E)) {
-                    EventManager.TriggerEvent("ToggleDrumToMovement");
-                }
-            }
-
             if (tutorialController.isTextShowing) {
                 if (Input.GetMouseButtonDown(0)) {
                     tutorialController.progressText();
                 }
                 return;
             }
-
             
             if (Input.GetButton("Fire1")) {
                 if (tutorialController.isAttackTogglingEnabled) {
+                    EventManager.TriggerEvent("ToggleDrumToAttack");
                     doAttack();
                 }
             }
             else {
                 if (tutorialController.isMovementEnabled) {
+                    EventManager.TriggerEvent("ToggleDrumToMovement");
                     doMovement();
                 }
             }

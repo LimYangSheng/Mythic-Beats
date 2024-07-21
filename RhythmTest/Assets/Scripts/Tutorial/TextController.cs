@@ -77,24 +77,24 @@ public class TextController : MonoBehaviour {
         textList[0] = "Hello, welcome to the world of Ra-Beats.";
         textList[1] = "I am your familiar in this world, Ra. Nice to meet you!";
         textList[2] = "Oh right, I forgot you can’t speak in here.";
-        textList[3] = "You can use the drums you have there to communicate with me. Try using it to tell me how to move!";
-        textList[4] = "Try moving me in all four directions";
+        textList[3] = "You can use the drums you have there to communicate with me. Try pressing the WASD buttons!";
+        textList[4] = "Let's try moving in all four directions";
         textList[5] = "";
 
         // Movement with beat stage
         textList[6] = "Great! We are musical creatures by nature, so we follow a rhythm of sorts";
         //textList[7] = "Try moving all four directions, according to the beat now. If it helps, you can look at the orb behind me to time your drum hits";
-        textList[7] = "Try moving all four directions, according to the beat now.";
+        textList[7] = "Try moving in all four directions, according to the beat now.";
         textList[8] = "";
 
         // Toggling to attack stage
         textList[9] = "Great! Let’s move on to attacks. You need a different set of drums for that";
-        textList[10] = "Press the button at the back of the controller";
+        textList[10] = "Try holding down the LMB and see what happens!";
         textList[11] = "";
 
         // Normal attack stage
         textList[12] = "Now what you have are attack drums. With those, I can dish out some painful moves";
-        textList[13] = "You can switch back to the movement drums anytime by pressing the same button";
+        textList[13] = "You will switch back to the movement drums anytime upon releasing the LMB";
         textList[14] = "Let’s try all 4 attacks on the dummy, according to the beat now!";
         textList[15] = "";
 

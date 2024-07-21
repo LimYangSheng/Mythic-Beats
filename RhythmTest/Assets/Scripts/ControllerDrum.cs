@@ -12,12 +12,12 @@ public class ControllerDrum : MonoBehaviour {
     public bool canHit = false;
     public bool isTouching = false;
 
-    private SteamVR_TrackedObject trackedObj;
+    //private SteamVR_TrackedObject trackedObj;
     private Material drumRimMat;
 
 
     void Start () {
-        drumRimMat = this.GetComponentInChildren<Renderer>().materials[4];
+        drumRimMat = this.transform.Find("Drum").GetComponentInChildren<Renderer>().materials[4];
     }
 
 
@@ -38,13 +38,13 @@ public class ControllerDrum : MonoBehaviour {
         isTouching = true;
 
         if (playerControl != null && collider.CompareTag("DrumStick")) {
-            playerControl.drumHit(keyCode, collider.gameObject.GetComponent<ControllerStick>().id);
+            playerControl.drumHit(keyCode);
         }
         else if (playerControlTutorial != null && collider.CompareTag("DrumStick")) {
-            playerControlTutorial.drumHit(keyCode, collider.gameObject.GetComponent<ControllerStick>().id);
+            playerControlTutorial.drumHit(keyCode);
         }
         else if (startScreenController != null && collider.CompareTag("DrumStick")) {
-            startScreenController.drumHit(keyCode, collider.gameObject.GetComponent<ControllerStick>().id);
+            startScreenController.drumHit(keyCode);
         }
 
         canHit = false;

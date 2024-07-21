@@ -59,16 +59,12 @@ public class Player : MonoBehaviour {
         }
 
         if (mainCamera) {
-            if (Input.GetKey(KeyCode.Q))
-                EventManager.TriggerEvent("ToggleDrumToAttack");
-
-            if (Input.GetKey(KeyCode.E))
-                EventManager.TriggerEvent("ToggleDrumToMovement");
-
             if (Input.GetButton("Fire1")) {
+                EventManager.TriggerEvent("ToggleDrumToAttack");
                 doAttack();
             }
             else {
+                EventManager.TriggerEvent("ToggleDrumToMovement");
                 doMovement();
             }
         }
